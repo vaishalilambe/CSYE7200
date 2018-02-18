@@ -16,6 +16,6 @@ object Contravariance {
   val r2 = f2a("3")("2")
   val fs: Seq[String with Int => String => Try[Int]] = Seq(f1a, f2a)
   val xs: Seq[Any] = Seq(3, "3")
-  for {(f, x) <- fs zip xs} yield f(x)("2")
+  for {(f, x) <- fs zip xs} yield f(x)("2") //getting typemismatch error: required string with int how to fix it?
 
 }
